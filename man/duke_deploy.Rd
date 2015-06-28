@@ -17,7 +17,7 @@ duke_deploy(auth_details, model_object, predict_udf = NULL,
 \item{host_name}{optional parameter.}
 }
 \value{
-None
+Deployment status, success or failure with message.
 }
 \description{
 Deploy model using REST API
@@ -31,5 +31,8 @@ endpoint = "/api/v1.0"
 example_data <- as.data.frame(cbind(gl(3,50),rnorm(150)));names(example_data) <- c("x","y")
 example_fit  <- lm(y~x,data=example_data)
 duke_deploy(auth_details=duke_auth,model_object=example_fit)
+}
+\seealso{
+\code{\link{duke_predict}} for making predictions with deployed models or \code{\link{duke_list}} to display a list of all deployed models.
 }
 

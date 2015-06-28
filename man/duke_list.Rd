@@ -2,7 +2,7 @@
 % Please edit documentation in R/duke_list.R
 \name{duke_list}
 \alias{duke_list}
-\title{List deployed models}
+\title{List all models deployed.}
 \usage{
 duke_list(auth_details)
 }
@@ -10,10 +10,10 @@ duke_list(auth_details)
 \item{auth_details}{authorization parameters (must be stored in list format: list(user_name='exampleusername',api_key='exampleapikey')).}
 }
 \value{
-None
+A data.frame object with columns model_name, model_size, last_update, deploy_type.
 }
 \description{
-List deployed models
+List all models deployed.
 }
 \examples{
 duke_auth <- list(
@@ -22,5 +22,8 @@ api_key   = "db1542b66f16aba5768d8a19c27dec4facf9168a",
 endpoint = "/api/v1.0"
 )
 duke_list(auth_details=duke_auth)
+}
+\seealso{
+\code{\link{duke_deploy}} to deploy a model or \code{\link{duke_predict}} for making predictions with deployed models.
 }
 

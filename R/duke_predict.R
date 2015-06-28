@@ -5,7 +5,8 @@
 #' @param new_data new feature values for predictions.
 #' @param host_name optional parameter.
 #'
-#' @return None
+#' @return On successful prediction, a character vector with model predictions. An error message is returned on failure.
+#' @seealso \code{\link{duke_deploy}} for deploying a model or \code{\link{duke_list}} to display a list of all deployed models.
 #' @export
 #' @examples
 #' 
@@ -15,7 +16,7 @@
 #' endpoint = "/api/v1.0"
 #' )
 #' example_data <- as.data.frame(cbind(gl(3,50),rnorm(150)));names(example_data) <- c("x","y")
-#' duke_predict(auth_details=duke_auth,model_name="test1",example_data)
+#' duke_predict(auth_details=duke_auth,model_name="example_fit",example_data)
 
 duke_predict <- function(auth_details,model_name,new_data,host_name=NULL){
   if (!("user_name" %in% names(auth_details))) return("No user_name supplied as part of the auth_details parameter.")

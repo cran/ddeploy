@@ -16,7 +16,7 @@ duke_predict(auth_details, model_name, new_data, host_name = NULL)
 \item{host_name}{optional parameter.}
 }
 \value{
-None
+On successful prediction, a character vector with model predictions. An error message is returned on failure.
 }
 \description{
 Predict using deployed model using REST API.
@@ -28,6 +28,9 @@ api_key   = "db1542b66f16aba5768d8a19c27dec4facf9168a",
 endpoint = "/api/v1.0"
 )
 example_data <- as.data.frame(cbind(gl(3,50),rnorm(150)));names(example_data) <- c("x","y")
-duke_predict(auth_details=duke_auth,model_name="test1",example_data)
+duke_predict(auth_details=duke_auth,model_name="example_fit",example_data)
+}
+\seealso{
+\code{\link{duke_deploy}} for deploying a model or \code{\link{duke_list}} to display a list of all deployed models.
 }
 

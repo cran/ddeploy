@@ -5,7 +5,8 @@
 #' @param predict_udf user defined function as alternative to the built-in model object predict function.
 #' @param host_name optional parameter.
 #'
-#' @return None
+#' @return Deployment status, success or failure with message.
+#' @seealso \code{\link{duke_predict}} for making predictions with deployed models or \code{\link{duke_list}} to display a list of all deployed models.
 #' @export
 #' @examples
 #' 
